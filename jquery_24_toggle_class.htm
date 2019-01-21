@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .yellow{
+            font-weight:bold;
+            font-size:30px;
+            background-color:yellow;
+        }
+        .brown{
+            font-weight:bold;
+            font-size:30px;
+            background-color:burlywood;
+        }
+        #makeAChoice{
+            margin-left:200px;
+            margin-top:50px;
+            margin-bottom:100px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+        #button{
+            margin-left:50px;
+            margin-top:50px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <select id="makeAChoice" onchange="modifyText()">
+            <option>Paragraph1ToggleClass</option>
+            <option>Paragraph2ToggleClass</option>
+        </select>
+        <button id="button" onclick="modifyText()">Make Selection</button>
+    </div>
+    <div id="main">
+        <p id="para1" class="yellow">Paragraph 1</p>
+        <p id="para2" class="yellow">Paragraph 2</p>
+    </div>
+
+    <script>
+        function modifyText() {
+            var option = $("#makeAChoice").val();
+            console.log("Option selected is " + option);
+            switch (option) {
+                case "Paragraph1ToggleClass":
+                    $("#para1").toggleClass("brown yellow");
+                    break;
+                case "Paragraph2ToggleClass":
+                    $("#para2").toggleClass("brown yellow");
+                    break;
+            }
+
+        }
+       
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>

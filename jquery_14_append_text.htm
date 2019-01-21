@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>appendTo demo</title>
+  <style>
+  #foo {
+    background: yellow;
+  }
+  </style>
+ <script type='text/javascript' src='jquery.min.js'></script>
+</head>
+<body>
+ 
+<span id="append1">I have nothing more to say... </span>
+ 
+ <span id="append2">Second block of text to append</span>
+ 
+ <div id="foo">FOO! </div>
+ 
+ 
+<div id="secondDiv">FOO 2 ! </div>
+ 
+ 
+<script>
+$( "#append1" ).appendTo( "#foo" );
+$( "#append2" ).appendTo( "#secondDiv" );
+
+</script>
+ 
+ 
+ 
+ 
+</body>
+</html>

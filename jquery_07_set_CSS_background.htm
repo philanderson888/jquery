@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<style>
+</style>
+</head>
+<body>
+<script type='text/javascript' src='jquery.min.js'></script>
+<script>
+$(document).ready(function(){ 
+
+console.log("Running document.ready ");
+
+$("p").css("background-color","red");
+
+$("p").css("width","200px");
+
+$(".blue").css("background-color","blue").css("width","500px");
+
+$(".pink").css("background-color","pink").css("width","500px").append(" Extra Text Added");
+
+
+
+
+console.log($("p"));
+
+});   // also document.ready function
+
+</script>
+<p>Text in a paragraph</p>
+<p>More text</p>
+<div class="blue">Blue text</div>
+<div class="pink">Pink text</div>
+
+</body>
+</html>
+

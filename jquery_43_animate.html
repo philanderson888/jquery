@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<div id="clickme">
+  Click here
+</div>
+<img id="book" src="http://pngimg.com/upload/book_PNG2113.png" alt="" width="100" height="123"
+  style="position: relative; left: 10px;">
+</body>
+<script src="assets/js/jquery.js"></script>
+<script>
+$( "#clickme" ).click(function() {
+  $( "#book" ).animate({
+    opacity: 0.25,
+    left: "+=50",
+    height: "toggle"
+  }, 5000, function() {
+    // Animation complete.
+  });
+});
+</script>
+</html>

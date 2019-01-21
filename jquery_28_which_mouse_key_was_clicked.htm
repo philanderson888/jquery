@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .input_box{
+            margin:50px 0px 25px 200px;
+            font-family:Arial;
+            font-size:xx-large;
+            background-color:burlywood;
+            color:brown;
+        }
+        #log{
+            font-family:Arial;
+            font-size:xx-large;
+            background-color:burlywood;
+            color:brown;
+            margin-left:200px;
+        }
+    </style>
+</head>
+<body>
+
+<input id="input_text" class="input_box" value="" placeholder="Click In Here With Your Mouse" />
+
+    <div id="log">
+
+    </div>
+
+
+    <script>
+
+        $().ready(function () {
+
+            console.log("Inside ready function");
+            $("#input_text").on('mousedown', function (event) {
+
+                $("#log").html(event.type + ": " + event.which);
+            });
+
+        });
+
+
+        
+
+    </script>
+
+
+</body>
+
+</html>

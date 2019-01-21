@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+    <div class="content">
+        <div id="right_pane_results">hi</div>
+        <div id="bottom_pane_options">
+            <button>Try It</button>
+        </div>
+    </div>
+	<div id="data">Data
+	</div>
+</body>
+<script src="jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $.ajax({
+        async:false,
+        url: 'test.txt',
+        dataType: 'text',
+        success: function(data) 
+        {
+        $('#data').append(data);
+            }
+        });
+    });
+});
+</script>
+</html>

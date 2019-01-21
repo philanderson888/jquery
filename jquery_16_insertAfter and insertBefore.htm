@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .dynamic{
+            font-weight:bold;
+            font-size:30px;
+            background-color:yellow;
+        }
+
+    </style>
+</head>
+<body>
+ 
+<div>
+    <select id="makeAChoice" onchange="modifyText()">
+        <option>InsertBefore</option>
+        <option>InsertAfter</option>
+        <option>.before</option>
+        <option>.after</option>
+        <option>RunAFunction</option>
+    </select>
+<button id="button" onClick="modifyText()">Modify Text</button>
+</div>
+<div id="main">
+ <p id="para1">Paragraph 1</p>
+ <p id="para2">Paragraph 2</p>
+ <p id="para3">Paragraph 3</p>
+ <p id="para4">Paragraph 4</p>
+ <p id="para5">Paragraph 5</p>
+</div>
+
+<script>
+function modifyText(){
+    var option = $("#makeAChoice").val();
+	$("#para1").html("Paragraph 1");
+	$("#para2").html("Paragraph 2");
+	$("#para3").html("Paragraph 3");
+	$("#para4").html("Paragraph 4");
+	$("#para5").html("Paragraph 5");
+	console.log("Option selected is " + option);
+	switch(option){
+		case "InsertBefore":
+		    $("<span class='dynamic'>This text is inserted before </span>").insertBefore("#para1");
+			break; 
+	    case "InsertAfter":
+	        $("<span class='dynamic'>This text is inserted after </span>").insertAfter("#para2").css("background-color","blue").css("clear","both");
+	        break;
+	    case ".after":
+	        $("#para4").after("<span class='dynamic'>This text is inserted using .after</span>");
+	        break;
+        case ".before":
+	        $("#para3").before("<span class='dynamic'>This text is inserted using .before </span>");
+	        break;
+	    case "RunAFunction":
+	        $("#para5").before("<span class='dynamic'>This text is inserted using .before </span>",myFunction());
+	        break;
+	}
+}
+function myFunction() {
+    console.log("Inside myFunction");
+    return ("This text has been returned from the function");
+}
+
+
+
+$().ready(function() {
+
+console.log("Inside ready function");
+
+});
+
+	
+
+</script>
+ 
+</body>
+</html>

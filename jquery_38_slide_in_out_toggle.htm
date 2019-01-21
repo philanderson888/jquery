@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+       div > div{
+           width:90%;
+           height:100px;
+           top:200px;
+           left:200px;
+           background-color:aqua;
+           border-top:7px solid;
+           border-bottom:7px solid;
+           border-right:14px solid;
+           border-left:14px solid;
+           border-color:ActiveCaption;
+           margin-left:auto;
+           margin-right:auto;
+           font-size:xx-large;
+           font-family:Arial;
+       }
+       div > div:last-child{
+           border-bottom:14px solid;
+       }
+       div > div:first-child{
+           border-top:14px solid;
+       }
+       button{
+           font-family:Arial;
+           font-size:xx-large;
+           background-color:beige;
+           margin-top:20px;
+           margin-left:60px;
+       }
+       button:hover{
+           background-color:ActiveBorder;
+       }
+    </style>
+</head>
+<body>
+    <div id="divParent">
+        <div id="slideMe1">1 - Click To Hide</div>
+        <div id="slideMe2">2 - Click To Hide</div>
+        <div id="slideMe3">3 - Click To Hide</div>
+    </div>
+    
+
+    <button id="btnSlideUp">Click To Slide Up</button>
+    <button id="btnSlideDown">Click To Slide Down</button>
+    <button id="btnSlideToggle">Click To Slide Toggle</button>
+
+   <script>
+       $().ready(function () {
+           $('div > div').on('click', function (ev) {
+               $(ev.currentTarget).slideUp();
+           });
+           $('#btnSlideUp').on('click', function () {
+               $('div > div:visible').slideUp();
+           });
+           $('#btnSlideDown').on('click', function () {
+               $('div > div:hidden').slideDown();
+           });
+           $('#btnSlideToggle').on('click', function () {
+               $('div > div').slideToggle();
+           });
+       });
+
+    </script>
+
+
+</body>
+
+
+
+</html>

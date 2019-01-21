@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Orientation Test</title>
+    <style>
+      body { text-align: center; }
+      @media all and (orientation:portrait) {
+        body { font-size: 35em; margin-top: .3em; }
+      }
+      @media all and (orientation:landscape) {
+        body { font-size: 20em; margin-top: 0em; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="orientation-value"></div>
+    <script type='text/javascript' src='assets/js/jquery.min.js'></script>
+    <script>
+      var checkOrientation = function() {
+        $('#orientation-value').html(window.orientation);
+      };
+
+      $(window).on('load', checkOrientation).on('orientationchange', checkOrientation);
+    </script>
+		<p>Test</p>
+  </body>
+</html>

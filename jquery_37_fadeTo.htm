@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>jQuery FadeTo(x)</title>
+    <script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .blue{
+            width:200px;
+            height:200px;
+            background-color:aqua;
+            border:solid 2px;
+            border-color:ActiveCaption;
+        }
+        button{
+            font-size:xx-large;
+            font-family:Arial;
+            background-color:ActiveCaption;
+        }
+        button:hover{
+            background-color:burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div id="divFade" class="blue">
+
+    </div>
+    <button id="btnFade">Click To Fade</button>
+    <button id="btnRestore">Click To Restore</button>
+    <script>
+        $().ready(function () {
+            $('#btnFade').on('click',function(){
+                $('#divFade').fadeTo(500, 0.2);
+            });
+            $('#btnRestore').on('click', function () {
+                $('#divFade').fadeTo(500, 1);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

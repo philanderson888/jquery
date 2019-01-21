@@ -1,0 +1,55 @@
+body { 
+	font-family: Arial, Helvetica, sans-serif;
+	color: #3B3B3B; 
+}
+
+hr { margin: 25px 0; }
+
+h2 { font-size: 16px; }
+
+h3 { 
+	font-family: "Courier New", Courier, monospace;
+}
+
+p { 
+	text-align: left;
+	font-family: "Courier New", Courier, monospace;
+}
+
+section {
+ text-align: center;
+ width: 1000px;
+ margin: 0 auto;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background: #1fb5b5;
+  border: 0;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.helloText {
+	display: none;
+}
+
+.yellowHighlight {
+	background: yellow;
+}
+
+.clock {
+	background: #F5F5F5;
+	border: 1px solid #dbdbdb;
+	padding: 20px;
+	margin: 50px auto;
+}
+
+#clock {
+	padding: 20px;
+	font-size: 26px;
+	border: 2px solid  #008c8c;
+}

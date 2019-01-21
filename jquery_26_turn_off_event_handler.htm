@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        div{
+            font-family:Arial;
+            font-size:xx-large;
+            width:80%;
+        }
+        .parent{
+            border:5px solid blue;
+            height:500px;
+            background-color:aliceblue;
+            margin:50px 50px 50px 50px;
+        }
+        .child{
+            border:1px solid blueviolet;
+            width:auto;
+            height:200px;
+            background-color:azure;
+            margin:20px 20px 20px 20px;
+        }
+        button{
+            background-color:chartreuse;
+            font-size:xx-large;
+            border:2px solid darkgreen;
+            margin: 10px 0px 10px 50px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parent" data-name="Parent Div">
+        Parent
+        <div class="child" data-name="Child 1 Div">
+            Child 1
+        </div>
+        <div class="child" data-name="Child 2 Div">
+            Child 2
+        </div>
+    </div>
+    <button id="btnTurnOffEventHandling">Turn Off Event Handling</button>
+
+    <script>
+        function fnTurnOffEventHandling(){
+
+
+        }
+            
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+            $("div").on('click', function (ev) {
+
+                console.log(ev.currentTarget.dataset.name);
+
+                ev.stopPropagation();
+
+            });
+
+
+            $("#btnTurnOffEventHandling").on('click', function (ev) {
+                console.log("DIV click event handling has now been TURNED OFF");
+                $('div').off('click');    // Remove all click event handlers
+            });
+        });
+
+
+        
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+<style>
+.dynamic{
+font-size:30px;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+ 
+<div>
+<select id="makeAChoice" onChange="modifyText()">
+  <option>Append</option>
+	<option>AppendTo</option>
+	<option>Prepend</option>
+	<option>PrependTo</option>
+</select>
+<button id="button" onClick="modifyText()">Modify Text</button>
+</div>
+<div id="main">
+ <p id="para1">Paragraph 1</p>
+ <p id="para2">Paragraph 2</p>
+ <p id="para3">Paragraph 3</p>
+ <p id="para4">Paragraph 4</p>
+</div>
+
+<script>
+function modifyText(){
+	var option = $("#makeAChoice").val();
+	$("#para1").html("Paragraph 1");
+	$("#para2").html("Paragraph 2");
+	$("#para3").html("Paragraph 3");
+	$("#para4").html("Paragraph 4");
+	switch(option){
+		case "AppendTo":
+			$("<span class='dynamic'>This text is appended using AppendTo</span>").appendTo("p");
+			break; 
+		case "PrependTo":
+			$("<span class='dynamic'>This text is prepended using PrependTo</span>").prependTo("p");
+			break; 
+		case "Append":
+			$("p").append("<span class='dynamic'>This text is appended using .append</span>");
+			break; 
+		case "Prepend":
+			$("p").prepend("<span class='dynamic'>This text is prepended using .prepend</span>");
+			break; 
+		}
+}
+
+
+
+$().ready(function() {
+
+console.log("Inside ready function");
+
+});
+
+	
+
+</script>
+ 
+</body>
+</html>

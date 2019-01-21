@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .dynamic{
+            font-weight:bold;
+            font-size:30px;
+            background-color:yellow;
+        }
+        #makeAChoice{
+            margin-left:200px;
+            margin-top:50px;
+            margin-bottom:100px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+        #button{
+            margin-left:50px;
+            margin-top:50px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <select id="makeAChoice" onchange="modifyText()">
+            <option>GiveItAClass</option>
+            <option>SetWidth200</option>
+            <option>SetWidth400</option>
+            <option>SetHeight200</option>
+            <option>SetHeight400</option>
+        </select>
+        <button id="button" onclick="modifyText()">Make Selection</button>
+    </div>
+    <div id="main">
+        <p id="para1">Paragraph 1</p>
+        <p id="para2">Paragraph 2</p>
+    </div>
+
+    <script>
+        function modifyText() {
+            var option = $("#makeAChoice").val();
+            console.log("Option selected is " + option);
+            switch (option) {
+                case "GiveItAClass":
+                    $("#para1").addClass("dynamic").append(" -- Paragraph now has dynamic class styling applied to it");
+                    break;
+                case "SetWidth200":
+                    $("#para1").width("200px").append(" -- Paragraph now has width of 200 pixels");
+                    break;
+                case "SetWidth400":
+                    $("#para1").width("400px").append(" -- Paragraph now has width of 400 pixels");
+                    break;
+                case "SetHeight200":
+                    $("#para1").height("200px").append(" -- Paragraph now has height of 200 pixels");
+                    break;
+                case "SetHeight400":
+                    $("#para1").height("400px").append(" -- Paragraph now has height of 400 pixels");
+                    break;
+            }
+            $("#para2").append("  The width of paragraph 2 is ").append($("#para2").width());
+            $("#para2").append(".    The height of paragraph 2 is ").append($("#para2").height());
+            $("#para2").append(".    The position of paragraph 2 is ").append($("#para2").position().left);
+            $("#para2").append(", ").append($("#para2").position().top);
+        }
+       
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>

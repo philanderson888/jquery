@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>nth-child demo</title>
+  <style>
+	*{
+  font-size:30px;
+	}
+  div {
+    float: left;
+		width:200px;
+  }
+  span {
+    color: blue;
+  }
+  </style>
+<script type='text/javascript' src='jquery.min.js'></script>
+</head>
+<body>
+ 
+<div>
+  <ul>
+    <li>John</li>
+    <li>Karl</li>
+    <li>Brandon</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>Sam</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li>Glen</li>
+    <li>Tane</li>
+    <li>Ralph</li>
+    <li>David</li>
+  </ul>
+</div>
+ 
+<script>
+$( "ul li:nth-child(2)" ).append( "<span> - 2nd!</span>" );
+$("div:even").css("background-color","gold");
+$("div:odd").css("background-color","red");
+</script>
+ 
+</body>
+</html>

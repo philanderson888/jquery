@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        div{
+            background-color:aliceblue;
+            font-family:Arial;
+            font-size:xx-large;
+            font-weight:bold;
+        }
+        div:hover{
+            background-color:ButtonFace;
+        }
+        button{
+            background-color:aqua;
+            font-family:Arial;
+            font-size:xx-large;
+            font-weight:bold;
+        }
+        button:hover{
+            background-color:ActiveCaption;
+        }
+        #para3{
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="para1">
+        <p>Paragraph 1 - Click To Hide</p>
+    </div>
+    <div id="para2">
+        <p>Paragraph 2 - Click To Hide</p>
+    </div>
+
+    <button id="click_to_toggle_elements">Click To Toggle Elements</button>
+    <div id="para3">
+
+    </div>
+
+    <script>
+
+        $().ready(function () {
+
+            $('#para1').on('click', function () {
+                $(this).hide();
+            });
+
+            $('#para2').on('click', function () {
+                $(this).hide();
+            });
+
+            $('#click_to_toggle_elements').on('click', function () {
+                $('#para1').toggle();
+                $('#para2').toggle();
+            });
+
+            $('#para1, #para2, #click_to_toggle_elements').on('click', function () {
+                $('#para3').html('Paragraph 1 status currently visible is ' + $('#para1').is(':visible'));
+                $('#para3').append('<p>Paragraph 2 status currently visible is ' + $('#para2').is(':visible'));
+            });
+
+        });
+
+
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+      div{
+          width:100%;
+          height:200px;
+          background-color:aqua;
+      }
+      button{
+          font-size:xx-large;
+          font-family:Arial;
+          background-color:aliceblue;
+          border:10px solid;
+          border-color:ActiveCaption;
+          margin-top:20px;
+          margin-left:50px;
+          width:400px;
+      }
+      button:hover{
+          background-color:antiquewhite;
+      }
+    </style>
+</head>
+<body>
+    <div id="divResizable">
+
+    </div>
+    <button id="btnClick1">Click to shrink the div</button>
+    <button id="btnClick2">Click to expand the div</button>
+    <p />
+    <button id="btnClick3">Shrink over 3 seconds</button>
+    <button id="btnClick4">Expand over 3 seconds</button>
+    <script>
+        $.easing.easeInOutQuadratic = function (x, t, b, c, d) {
+            if ((t /= d / 2) < 1) return c / 2 * t * t + b;
+            return -c / 2 * ((--t) * (t - 2) - 1) + b;
+        };
+        $('#btnClick1').on('click', function () {
+            $('#divResizable').animate(
+                { width: 200 }, '', 'easeInOutQuadratic'
+                );
+        });
+        $('#btnClick2').on('click', function () {
+            $('#divResizable').animate(
+                { width: '100%' }, '', 'easeInOutQuadratic'
+                );
+        });
+        $('#btnClick3').on('click', function () {
+            $('#divResizable').animate(
+                { width: '10%' }, { duration: 3000 }
+            );
+        });
+        $('#btnClick4').on('click', function () {
+            $('#divResizable').animate(
+                { width: '100%' }, { duration: 3000 }
+            );
+        });
+    </script>
+
+
+</body>
+
+
+
+</html>

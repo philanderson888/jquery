@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+</head>
+<body>
+ 
+<div>
+
+<h1>Header Text</h1>
+
+<h2 id="headerTwo">Header Two Text</h2>
+
+<p>
+
+Paragraph 1 of DIV
+
+</p>
+
+
+<p>
+
+Paragraph 2 of DIV
+
+</p>
+
+<p>
+
+Paragraph 3 of DIV
+
+</p>
+
+
+</div>
+ 
+ 
+
+<script>
+
+
+$().ready(function() {
+
+console.log("Inside ready function");
+
+
+$("p").html("JQuery changes all paragraph text to this text");
+	
+$("h1").text("Header written by JQuery");
+	
+$("div p:first").html("jQuery changes <em>first</em> paragraph text to this text");
+	
+$("div p:nth-of-type(2)").html("jQuery changes <em>second</em> paragraph");
+	
+	
+	
+$("#headerTwo").html("jQuery rewriting Header 2 text selected by ID to red Arial").css("background-color","red").css("font-family","arial");  
+
+
+});
+
+	
+
+</script>
+ 
+</body>
+</html>

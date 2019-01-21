@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .dynamic{
+            font-weight:bold;
+            font-size:30px;
+            background-color:yellow;
+        }
+        .brown{
+            background-color:burlywood;
+        }
+        #makeAChoice{
+            margin-left:200px;
+            margin-top:50px;
+            margin-bottom:100px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+        #button{
+            margin-left:50px;
+            margin-top:50px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <select id="makeAChoice" onchange="modifyText()">
+            <option>Paragraph1SwapClass</option>
+            <option>Paragraph2SwapClass</option>
+        </select>
+        <button id="button" onclick="modifyText()">Make Selection</button>
+    </div>
+    <div id="main">
+        <p id="para1" class="dynamic">Paragraph 1</p>
+        <p id="para2" class="dynamic">Paragraph 2</p>
+    </div>
+
+    <script>
+        function modifyText() {
+            var option = $("#makeAChoice").val();
+            console.log("Option selected is " + option);
+            switch (option) {
+                case "Paragraph1SwapClass":
+                    $("#para1").addClass("brown").removeClass("dynamic");
+                    break;
+                case "Paragraph2SwapClass":
+                    $("#para2").addClass("brown").removeClass("dynamic");
+                    break;
+            }
+
+        }
+       
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>

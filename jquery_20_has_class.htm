@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .dynamic{
+            font-weight:bold;
+            font-size:30px;
+            background-color:yellow;
+        }
+        #makeAChoice{
+            margin-left:200px;
+            margin-top:50px;
+            margin-bottom:100px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+        #button{
+            margin-left:50px;
+            margin-top:50px;
+            background-color:aliceblue;
+            font-size:xx-large;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <select id="makeAChoice" onchange="modifyText()">
+            <option>DoesParagraph1HaveAClass</option>
+            <option>DoesParagraph2HaveAClass</option>
+        </select>
+        <button id="button" onclick="modifyText()">Make Selection</button>
+    </div>
+    <div id="main">
+        <p id="para1">Paragraph 1 which is NOT STYLED</p>
+        <p id="para2" class="dynamic">Paragraph 2 which is styled</p>
+    </div>
+
+    <script>
+        function modifyText() {
+            var option = $("#makeAChoice").val();
+            console.log("Option selected is " + option);
+            switch (option) {
+                case "DoesParagraph1HaveAClass":
+                    $("#para1").append(" -- Paragraph 1 has class Dynamic? - ").append($("#para1").hasClass("dynamic").toString());
+                    if ($("#para1").hasClass("dynamic")) {
+                        $("#para1").append("  -->  Paragraph 1 has dynamic styling");
+                    }
+                    else {
+                        $("#para1").append("  -->  Paragraph 1 does not have dynamic styling");
+                    }
+                    break;
+                case "DoesParagraph2HaveAClass":
+                    $("#para2").append(" -- Paragraph 2 has class Dynamic? - ").append($("#para2").hasClass("dynamic").toString());
+                    if ($("#para2").hasClass("dynamic")) {
+                        $("#para2").append("  -->  Paragraph 2 has dynamic styling");
+                    }
+                    else {
+                        $("#para2").append("  -->  Paragraph 2 does not have dynamic styling");
+                    } break;
+            }
+        }
+       
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>

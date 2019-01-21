@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+</head>
+<body>
+ 
+<div>
+
+<h1>Header Text</h1>
+
+<h2 id="headerTwo">Header Two Text</h2>
+
+<p id="appendToThisElement">
+
+Paragraph 1 of DIV
+
+</p>
+
+
+<p id="prependToThisElement">
+
+Paragraph 2 of DIV
+
+</p>
+
+<p>
+
+Paragraph 3 of DIV
+
+</p>
+
+
+</div>
+ 
+ <span id="firstBlockOfTextToAppend"> jQuery appended this text onto the first paragraph</span>
+<span id="firstBlockOfTextToPrepend"> jQuery prepended this text onto the second paragraph - </span>
+<script>
+
+
+$().ready(function() {
+
+console.log("Inside ready function");
+
+
+$("h1").text("Header written by JQuery");
+	
+$("div p:first").html("jQuery changes <em>first</em> paragraph text to this text");
+	
+$("div p:nth-of-type(2)").html("jQuery changes <em>second</em> paragraph");
+	
+
+	
+$("#headerTwo").html("jQuery rewriting Header 2 text selected by ID to red Arial").css("background-color","red").css("font-family","arial");  
+
+	$( "#firstBlockOfTextToAppend" ).css("font-size","36px").appendTo( "#appendToThisElement" );
+
+	$( '#firstBlockOfTextToPrepend').css("font-weight","bold").css("font-size","36px").prependTo( '#prependToThisElement');
+	
+	$("div p:last").append("<b> - jQuery appends this HTML to last paragraph</b>").css("font-size","36px").css("font-style","italic");
+
+	$("div p:last").prepend("<b>jQuery prepends this HTML to last paragraph</b>").css("font-size","36px").css("font-style","italic");
+});
+
+	
+
+</script>
+ 
+</body>
+</html>

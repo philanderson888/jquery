@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        *{
+            font-family:Arial;
+            font-size:xx-large;
+            font-weight:bold;
+        }
+        .section1{
+            background-color:ButtonFace;
+            height:250px;
+            border:5px solid AppWorkspace;
+            margin:5px;
+        }
+        .section2{
+            background-color:cornsilk;
+            height:200px;
+                        border:5px solid;
+            border-color:AppWorkspace;
+        }
+        div{
+            background-color:aliceblue;
+            margin-top:20px;
+        }
+        div:hover{
+            background-color:ButtonFace;
+        }
+        button{
+            background-color:aqua;
+            font-family:Arial;
+            font-size:xx-large;
+            font-weight:bold;
+        }
+        button:hover{
+            background-color:ActiveCaption;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="section1">
+        <h1>Section 1</h1>
+        <div id="para1">
+            <p>Paragraph 1</p>
+        </div>
+
+        <div id="para2">
+            <p>Paragraph 2</p>
+        </div>
+
+    </section>
+
+    <section class="section2">
+        <h1>Section 2</h1>
+        <div id="para3">
+            <p>Paragraph 3</p>
+        </div>
+
+    </section>
+    
+    <script>
+
+        $().ready(function () {
+
+            $('.section1 div').on('mouseover', function () {
+                $('#para1').html('Paragraph 1 - You have hovered over a child div in section 1');
+                $('#para2').html('Paragraph 2 - You have hovered over a child div in section 1');
+            });
+
+            $('.section1 div').on('mouseleave', function () {
+                $('#para1').html('Paragraph 1');
+                $('#para2').html('Paragraph 2');
+            });
+
+            $('.section2 div').on('mouseover', function () {
+                $('#para3').html('Paragraph 3 - You have hovered over a child div in section 3');
+            });
+
+            $('.section2 div').on('mouseleave', function () {
+                $('#para3').html('Paragraph 3');
+            });
+
+        });
+
+
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>

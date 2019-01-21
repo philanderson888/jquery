@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        div{
+            font-family:Arial;
+            font-size:xx-large;
+            width:80%;
+        }
+        .parent{
+            border:5px solid blue;
+            height:500px;
+            background-color:aliceblue;
+            margin:50px 50px 50px 50px;
+        }
+        .child{
+            border:1px solid blueviolet;
+            width:auto;
+            height:200px;
+            background-color:azure;
+            margin:20px 20px 20px 20px;
+                    }
+    </style>
+</head>
+<body>
+
+    <div class="parent" data-name="Parent Div">
+        Parent
+        <div class="child" data-name="Child 1 Div">
+            Child 1
+        </div>
+        <div class="child" data-name="Child 2 Div">
+            Child 2
+        </div>
+    </div>
+
+
+    <script>
+        function modifyText() {
+            var option = $("#makeAChoice").val();
+            console.log("Option selected is " + option);
+            switch (option) {
+                case "Paragraph1SwapClass":
+                    $("#para1").addClass("brown").removeClass("dynamic");
+                    break;
+                case "Paragraph2SwapClass":
+                    $("#para2").addClass("brown").removeClass("dynamic");
+                    break;
+            }
+
+        }
+
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+            $("div").on('click', {data1:"Data passed to event"},function (ev) {
+
+                console.log(ev);
+                console.log(ev.currentTarget.dataset.name);
+                console.log("Data1 data passed into the event is \"" + ev.data.data1 + "\"");
+                ev.stopPropagation();
+
+            });
+
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>

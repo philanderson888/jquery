@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+       .blue{
+           width:200px;
+           height:200px;
+           border:2px solid;
+           border-color:aquamarine;
+           background-color:cornflowerblue;
+       }
+       #btnGroup{
+           position:absolute;
+           left:40px;
+           top:220px;
+       }
+       button{
+           font-family:Arial;
+           font-size:xx-large;
+           background-color:burlywood;
+           border-width:2px;
+           border:solid;
+           border-color:blueviolet;
+       }
+       button:hover{
+           background-color:AppWorkspace;
+       }
+    </style>
+</head>
+<body>
+
+    <div id="fadeInAndOut" class="blue">
+    </div>
+    <div id="btnGroup">
+        <button id="btnFadeIn">Click To Fade In</button>
+        <button id="btnFadeOut">Click To Fade Out</button>
+        <button id="btnFadeToggle">Click To Toggle Fade</button>
+    </div>
+    <script>
+        $().ready(function () {
+            $('#btnFadeIn, #btnFadeOut, #btnFadeToggle').on('click', function () {
+                $(this).animate({ 'border-width': '+=3px' }, "fast");
+                $(this).animate({ 'border-width': '-=3px' }, "fast");
+            });
+            $('#btnFadeIn').on('click', function () {
+                $('#fadeInAndOut').fadeIn(500);
+            });
+            $('#btnFadeOut').on('click', function () {
+                $('#fadeInAndOut').fadeOut(500);
+            });
+            $('#btnFadeToggle').on('click', function () {
+                $('#fadeInAndOut').fadeToggle(500);
+            });
+        });
+   
+    </script>
+
+
+</body>
+
+
+
+</html>

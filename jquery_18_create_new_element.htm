@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .dynamic{
+            font-weight:bold;
+            font-size:30px;
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <select id="makeAChoice" onchange="modifyText()">
+            <option>CopyParagraph1</option>
+            <option>CopyTableRow</option>
+            <option>AppendURL</option>
+        </select>
+        <button id="button" onclick="modifyText()">Modify Text</button>
+    </div>
+    <div id="main">
+        <p id="para1">Paragraph 1</p>
+        <p id="para1a"></p>
+        <p id="para2">Paragraph 2</p>
+        <p id="para3">Paragraph 3</p>
+        <p id="para4">Paragraph 4</p>
+        <p id="para5">Paragraph 5</p>
+    </div>
+    <div id="table">
+        <table>
+            <tr id="row1">
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr id="row2">
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function modifyText() {
+            var option = $("#makeAChoice").val();
+            $("#para1").html("Paragraph 1");
+            $("#para2").html("Paragraph 2");
+            $("#para3").html("Paragraph 3");
+            $("#para4").html("Paragraph 4");
+            $("#para5").html("Paragraph 5");
+            console.log("Option selected is " + option);
+            switch (option) {
+                case "CopyParagraph1":
+                    $("#para1").clone().appendTo("#para1a");
+                    break;
+                case "CopyTableRow":
+                    $("#row1").clone().appendTo("#row2");
+                    break;
+                case "AppendURL":
+                    $("#para5").after(
+                        $("<a />",{
+                            html:"This is a <strong>new</strong> link",
+                            href:"http://www.bbc.co.uk"})
+                        );
+                    break;
+            }
+        }
+       
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>

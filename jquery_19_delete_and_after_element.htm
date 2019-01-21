@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type='text/javascript' src='jquery.min.js'></script>
+    <style>
+        .dynamic{
+            font-weight:bold;
+            font-size:30px;
+            background-color:yellow;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <select id="makeAChoice" onchange="modifyText()">
+            <option>AddParagraph2</option>
+            <option>RemoveParagraph2</option>
+        </select>
+        <button id="button" onclick="modifyText()">Modify Text</button>
+    </div>
+    <div id="main">
+        <p id="para1">Paragraph 1</p>
+    </div>
+
+    <script>
+        function modifyText() {
+            var option = $("#makeAChoice").val();
+            console.log("Option selected is " + option);
+            switch (option) {
+                case "AddParagraph2":
+                    $("#para1").after("<p id='para2'>Paragraph 2</p>");
+                    break;
+                case "RemoveParagraph2":
+                    $("#para2").remove();
+                    break;
+            }
+        }
+       
+        $().ready(function () {
+
+            console.log("Inside ready function");
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>
