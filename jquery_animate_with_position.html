@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style>
+#wrapper {
+    width: 128px;
+    height: 128px;
+    border: solid 1px #000;
+    position: absolute;
+    top: 64px;
+    left: 64px;
+}
+#wrapper2 {
+    width: 128px;
+    height: 128px;
+    border: solid 1px #000;
+    position: absolute;
+    top: 500px;
+    left: 0px;
+    background-color: green;
+}
+#wrapper3 {
+    width: 128px;
+    height: 128px;
+    border: solid 1px #000;
+    position: absolute;
+    top: 600px;
+    left: 100px;
+    background-color: red;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function() {
+	$('#wrapper').click(function() {
+		$('#wrapper').animate({ 
+		    left: '512'
+		},
+		{                       
+	    	step: function(now, fx) {       
+	        	var pos = $('#wrapper').position();
+	        	var data = pos.top + ', ' + pos.left;
+	        	$('#output').append('<div>' + data + '</div>');
+	    	}
+		});
+	});
+	$('#wrapper2').click(function() {
+		$('#wrapper2').animate({ 
+		    left: '512'
+		},
+		{                       
+	    	step: function(now,fx) {       
+	        	var pos = $('#wrapper2').position();
+	        	var data = pos.top + ', ' + pos.left;
+	        	$('#output').append('<div>' + data + '</div>');
+	    	}
+		});
+	});
+
+	$('#wrapper3').click(function() {
+		$('#wrapper3').animate({ 
+		    left: '512'
+		},2000);
+	});
+});
+function stepFunction(now,fx){
+
+}
+</script> 
+</head>
+<body>
+<div id='wrapper'></div>
+<div id='wrapper2'></div>
+<div id='wrapper3'></div>
+<div id='output'></div>
+</body>
+</html>
