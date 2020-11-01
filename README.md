@@ -1,6 +1,8 @@
 # jquery
+
 A playground for learning jQuery
 
+[Notes](notes.md)
 
 ## Position
 
